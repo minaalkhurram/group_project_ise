@@ -10,16 +10,16 @@ void Employeepressed() {
 	cout << " Press 4 to view customer info" << endl;
 	cin >> check;
 	if (check == 1) {
-		cout << "Update Customer Information";
+		cout << "Update Customer Information";	// Function call
 	}
 	else if (check == 2) {
-		cout << "Update Billing Information";
+		cout << "Update Billing Information";	// Function call
 	}
 	else if (check == 3) {
-		cout << "Update Tariff Tax";
+		cout << "Update Tariff Tax";	// Function call
 	}
 	else if (check == 4) {
-		cout << "View Customer Information";
+		cout << "View Customer Information";	// Function call
 	}
 }
 
