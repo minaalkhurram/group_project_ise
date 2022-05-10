@@ -5,6 +5,75 @@
 
 using namespace std;
 
+
+void updatebill()
+{
+	ofstream out;
+out.open("billinginfo.txt", ios::app);
+	
+string enter;
+int num;
+cout << "\n\nENTER CUSTOMER ID : ";
+cin >> num;
+out << num<<",";
+
+cout << "\nEnter bill month : ";
+cin >> enter;
+out << enter << ",";
+cout << "\nEnter regular reading : ";
+cin >> num;
+out << num << ",";
+cout << "\nEnter peak reading :";
+cin >> num;
+out << num<< ",";
+cout << "\nEnter reading entry date (seperated by / ) :";
+cin >> enter;
+out << enter << ",";
+cout << "\nEnter electrcity costs: ";
+cin >> num;
+out << num << ",";
+cout << "\nEnter sales tax : ";
+cin >> num;
+out << num << ",";
+cout << "\nEnter fixed charges : ";
+cin >> num;
+out << num << ",";
+cout << "\nEnter total bill : ";
+cin >> num;
+out << num << ",";
+string enter2;
+cout << "\nEnter due date (seperated by / ) : ";
+cin >> enter2;
+out << enter2 << ",";
+string enter3;
+
+
+
+}
+void Employeepressed() {
+	int check = 0;
+	cout << "Update Customer Information" << '\t' << "Update Billing Information" << '\t' << "Update Tariff Tax" << '\t' << "View Customer Information" << endl;
+	cout << " Press 1 for customer info" << endl;
+	cout << " Press 2 for updating billing info" << endl;
+	cout << " Press 3 for tariff tax info" << endl;
+	cout << " Press 4 to view customer info" << endl;
+	cin >> check;
+	if (check == 1) {
+		cout << "Update Customer Information";	// Function call
+	}
+	else if (check == 2) {
+		cout << "Update Billing Information";	
+		updatebill();// Function call
+	}
+	else if (check == 3) {
+		cout << "Update Tariff Tax";	// Function call
+	}
+	else if (check == 4) {
+		cout << "View Customer Information";	// Function call
+	}
+}
+
+
 bool employee(string username, string password)
 {
 		ifstream fin;
@@ -29,7 +98,7 @@ bool employee(string username, string password)
 			}
 			if (check2)
 			{
-
+				check2 = false;
 				int size = username.length();
 				for (int i = size + 1, j = 0; password[j] != '\0'; i++, j++)
 				{
@@ -48,14 +117,12 @@ bool employee(string username, string password)
 				cout << "LOGIN SUCCESFUL";
 				break;
 			}
-			else
-			{
-				cout << "USERNAME OR PASS INCORRECT ";
-				break;
-
-			}
 		}
 		}
+	if (check2 == false)
+	{
+		cout << "USERNAME OR PASS INCORECT ";
+	}
 
 	return check2;
 
@@ -88,7 +155,7 @@ bool customer(string username, string password)
 			}
 			if (check2)
 			{
-
+				check2 = false;
 				int size = username.length();
 				for (int i = size + 1, j = 0; password[j] != '\0'; i++, j++)
 				{
@@ -122,14 +189,15 @@ int main()
 
 	string username;
 	string password;
-	cout << "ENTER USERNAME :";
-	cin >> username;
-	cout << "ENTER PASSWORD : ";
-	cin >> password;
+	
 	bool login = false;
 	int m = 0;
 	while (m == 0 || m == 1)
 	{
+		cout << "ENTER USERNAME :";
+		cin >> username;
+		cout << "ENTER PASSWORD : ";
+		cin >> password;
 
 		if (check == 'e')
 		{
@@ -145,6 +213,10 @@ int main()
 			cout << " PRESS 1 TO RETRY AND 2 TO EXIT ";
 			cin >> m;
 		}
+		else if (login)
+		{
+			m = 3;
+		}
 
 		if (m == 2)
 		{
@@ -153,4 +225,7 @@ int main()
 
 		}
 	}
+
+
+
 	}
