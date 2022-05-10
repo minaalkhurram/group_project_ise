@@ -1,4 +1,6 @@
+customerID, bill month, regular reading, peak reading, reading entry date, electricity cost, sales tax, fixed charges, total bill, due date, status, payment date
 6055,February,1300,000,28/02/2022, ,17,150,000,07/03/2022,paid,01/03/2022
 6055,March,1400,00,30/03/2022, ,20,250,000,07/04/2022,paid,01/04/2022
 6053,February,000,500,28/02/2022, ,17,150,000,07/03/2022,unpaid,00/00/0000
 5808,February,000,500,28/02/2022, ,20,250,000,07/03/2022,unpaid,00/00/0000
+
