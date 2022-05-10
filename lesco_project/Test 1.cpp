@@ -2,6 +2,6 @@
 using namespace std:
 int main()
 {
-cout<<"fast jahannum";
+cout<<"fast jahannum aur saifullah shaitan";
 return 0
 }
