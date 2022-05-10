@@ -23,6 +23,12 @@ void Employeepressed() {
 	}
 }
 
+void Customerpressed() {
+	cout << "Your Bill Information " << endl;
+
+}
+
+
 int main() {
 	Employeepressed();
 	system("pause");
