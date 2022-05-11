@@ -11,7 +11,6 @@ bool CustomerID() {
 	cout << "Enter Customer ID" << endl;
 	cin >> customerid;
 	fin.open("customersinfo.txt");
-	//if (fin.is_open) {
 	while (getline(fin, digit)) {
 		for (int i = 0; digit[i] != ','; i++)
 		{
@@ -28,7 +27,6 @@ bool CustomerID() {
 				return false;
 			}
 		}
-		//}
 	}
 }
 
@@ -39,8 +37,6 @@ int main() {
 		fin.open("Billinginfo.txt");
 		string character;
 		while (getline(fin,character)) {
-		//	fin >> character;
-			cout << "file found";
 			cout << character;
 		}
 	}
@@ -48,59 +44,3 @@ int main() {
 		cout << "Billing File not found";
 	}
 }
-
-//int main() {
-	/*ifstream fin;
-	string line, username, password;
-
-	bool check2 = false;
-	cout << "Enter Username " << endl;
-	cin >> username;
-	cout << "Enter Password " << endl;
-	cin >> password;
-	fin.open("employeesdata.txt");
-	if (fin.is_open())
-	{
-		while (getline(fin, line))
-		{
-			for (int i = 0; username[i] != '\0'; i++)
-			{
-				if (username[i] == line[i] && line[i] != ',')
-				{
-					check2 = true;
-				}
-				else
-					check2 = false;
-			}
-			if (check2)
-			{
-
-				check2 = false;
-				int size = username.length();
-				for (int i = size + 1, j = 0; password[j] != '\0'; i++, j++)
-				{
-					if (password[j] == line[i] && line[i] != '\0')
-					{
-						check2 = true;
-					}
-					else
-						check2 = false;
-				}
-			}
-			if (check2)
-			{
-				CustomerID();
-
-			}
-			else
-			{
-				cout << "USERNAME OR PASS INCORRECT ";
-				break;
-
-			}
-		}
-	}
-	else {
-		cout << "file not found";
-	}
-}*/
