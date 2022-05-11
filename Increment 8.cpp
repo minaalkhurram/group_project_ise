@@ -23,7 +23,7 @@ bool CustomerID() {
 				}
 			}
 			else {
-				cout << "Customer ID is Incorrect" << endl;
+				
 				return false;
 			}
 		}
@@ -41,6 +41,6 @@ int main() {
 		}
 	}
 	else {
-		cout << "Billing File not found";
+		cout << "Customer ID is Incorrect" << endl;
 	}
 }
