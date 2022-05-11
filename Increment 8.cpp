@@ -43,4 +43,6 @@ int main() {
 	else {
 		cout << "Customer ID is Incorrect" << endl;
 	}
+	system("pause");
+	return 0;
 }
