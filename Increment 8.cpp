@@ -2,7 +2,6 @@
 #include<fstream>
 #include<string>
 using namespace std;
-
 bool CustomerID() {
 	ifstream fin;
 	string customerid, digit;
@@ -12,31 +11,31 @@ bool CustomerID() {
 	cin >> customerid;
 	fin.open("customersinfo.txt");
 	while (getline(fin, digit)) {
-		for (int i = 0; digit[i] != ','; i++)
+		for (int i = 0; digit[i] != fin.eof(); )
 		{
 			if (digit[i] == customerid[j] && digit[i] != ',') {
 				count++;
 				j++;
+				i++;
 				if (count == 4) {
-
 					return true;
 				}
 			}
-			else {
+			else{
+				i++;
 				
-				return false;
 			}
 		}
+		return false;
 	}
 }
-
 int main() {
 	ifstream fin;
-	bool check=CustomerID();
+	bool check = CustomerID();
 	if (check) {
 		fin.open("Billinginfo.txt");
 		string character;
-		while (getline(fin,character)) {
+		while (getline(fin, character)) {
 			cout << character;
 		}
 	}
