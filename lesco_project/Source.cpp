@@ -73,6 +73,159 @@ void Employeepressed() {
 	}
 }
 
+string input(string line)
+{
+	string value, store;
+	value = line;
+	cout << endl << "enter the whole statement" << endl;
+	cin >> store;
+	line = store;
+	return line;
+}
+
+void UpdateTaxInfo()
+{
+	ifstream fin;
+	ofstream fout;
+	string line, line2, digit;
+	int count = 0;
+	int str_length;
+	fin.open("TarrifTaxInfo.txt");
+	char inputFile;
+	int num, num2, num3, num4;
+	cout << "press 1 if you want to update info\npress 2 if you want to add new info\n";
+	cin >> num;
+	if (num == 1)
+	{
+		string file_data[4];
+		cout << "if single phase press 1\nif three phase press 3\n";
+		cin >> num2;
+		if (num2 == 1)
+		{
+			cout << "if domestic press 1\nif commercial press 2\n";
+			cin >> num3;
+			if (num3 == 1)
+			{
+				//getline(fin, line);
+				string recieve;
+				getline(fin, line);
+				fout << line;
+				//cout << line;
+				recieve = input(line);
+				fin.close();
+				fin.open("TarrifTaxInfo.txt");
+				int count = 0;
+				while (count<4)
+				{
+					getline(fin, file_data[count]);
+					count++;
+				}
+				fin.close();
+				file_data[0] = recieve;
+				fstream filee;
+				filee.open("TarrifTaxInfo.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] <<endl;
+				}
+				filee.close();
+			}
+			
+			else if (num3 == 2)
+			{
+				for (int i = 0; i < 2; i++)
+				{
+					getline(fin, line2);
+				}
+				cout << line2;
+				string recieve = input(line2);
+
+				fstream filee;
+				filee.open("TarrifTaxInfo.txt", ios::in);
+				int count = 0;
+				while (count < 4)
+				{
+					getline(filee, file_data[count]);
+					count++;
+				}
+				filee.close();
+				file_data[1] = recieve;
+				filee.open("TarrifTaxInfo.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+
+
+			}
+		}
+		else if (num2 == 3)
+		{
+			cout << "if domestic press 1\nif commercial press 2\n";
+			cin >> num3;
+			if (num3 == 1)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					getline(fin, line);
+				}
+				cout << line;
+				string recieve = input(line);
+				fstream filee;
+				filee.open("TarrifTaxInfo.txt", ios::in);
+				int count = 0;
+				while (count < 4)
+				{
+					getline(filee, file_data[count]);
+					count++;
+				}
+				filee.close();
+				file_data[2] = recieve;
+				filee.open("TarrifTaxInfo.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+			}
+			else if (num3 == 2)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					getline(fin, line2);
+				}
+				cout << line2;
+				string recieve = input(line2);
+				fstream filee;
+				filee.open("TarrifTaxInfo.txt", ios::in);
+				int count = 0;
+				while (count < 4)
+				{
+					getline(filee, file_data[count]);
+					count++;
+				}
+				filee.close();
+				file_data[3] = recieve;
+				filee.open("TarrifTaxInfo.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+			}
+		}
+	}
+	if (num == 2)
+	{
+
+	}
+}
+
 
 bool employee(string username, string password)
 {
