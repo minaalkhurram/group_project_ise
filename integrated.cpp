@@ -42,7 +42,6 @@ bool CustomerID(string customer_id) {
 			}
 			else {
 				i++;
-
 			}
 		}
 		return false;
