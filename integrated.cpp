@@ -362,46 +362,182 @@ void output_bill(){
   cout<<"Paid status: "<<paid_status<<endl;
   
 }
+
+string input(string line)
+{
+	string value, store;
+	value = line;
+	cout << endl << "enter the whole statement seperated with commas and no spaces " << endl;
+	cin >> store;
+	line = store;
+	return line;
+}
+
+void updatebillcust(int reg, int peak, int id)
+{
+	ifstream fin;
+	ofstream fout;
+	string line, line2, digit;
+	int count = 0;
+	int str_length;
+	fin.open("customersinfo.txt");
+	char inputFile;
+	int num, num2, num3, num4;
+	num = 1;
+
+	if (num == 1)
+	{
+		string file_data[4];
+		cout << "if single phase press 1\nif three phase press 3\n";
+		cin >> num2;
+		if (num2 == 1)
+		{
+			cout << "if domestic press 1\nif commercial press 2\n";
+			cin >> num3;
+			if (num3 == 1)
+			{
+				//getline(fin, line);
+				string recieve;
+				getline(fin, line);
+				fout << line;
+				//cout << line;
+				recieve = input(line);
+				fin.close();
+				fin.open("customersinfo.txt");
+				int count = 0;
+				while (count < 4)
+				{
+					getline(fin, file_data[count]);
+					count++;
+				}
+				fin.close();
+				file_data[0] = recieve;
+				fstream filee;
+				filee.open("customersinfo2.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+			}
+
+			else if (num3 == 2)
+			{
+				for (int i = 0; i < 2; i++)
+				{
+					getline(fin, line2);
+				}
+				cout << line2;
+				string recieve = input(line2);
+
+				fstream filee;
+				filee.open("customersinfo.txt", ios::in);
+				int count = 0;
+				while (count < 4)
+				{
+					getline(filee, file_data[count]);
+					count++;
+				}
+				filee.close();
+				file_data[1] = recieve;
+				filee.open("customersinfo2.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+
+
+			}
+		}
+		else if (num2 == 3)
+		{
+			cout << "if domestic press 1\nif commercial press 2\n";
+			cin >> num3;
+			if (num3 == 1)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					getline(fin, line);
+				}
+				cout << line;
+				string recieve = input(line);
+				fstream filee;
+				filee.open("customersinfo.txt", ios::in);
+				int count = 0;
+				while (count < 4)
+				{
+					getline(filee, file_data[count]);
+					count++;
+				}
+				filee.close();
+				file_data[2] = recieve;
+				filee.open("customersinfo2.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+			}
+		}
+	}
+}
 void updatebill()
 {
-	ofstream out;
-    out.open("billinginfo.txt", ios::app);
 	
-string enter;
-int num;
-cout << "\n\nENTER CUSTOMER ID : ";
-cin >> num;
-out << num<<",";
+    ofstream out;
+    out.open("billinginfo.txt", ios::app);
 
-cout << "\nEnter bill month : ";
-cin >> enter;
-out << enter << ",";
-cout << "\nEnter regular reading : ";
-cin >> num;
-out << num << ",";
-cout << "\nEnter peak reading :";
-cin >> num;
-out << num<< ",";
-cout << "\nEnter reading entry date (seperated by / ) :";
-cin >> enter;
-out << enter << ",";
-cout << "\nEnter electrcity costs: ";
-cin >> num;
-out << num << ",";
-cout << "\nEnter sales tax : ";
-cin >> num;
-out << num << ",";
-cout << "\nEnter fixed charges : ";
-cin >> num;
-out << num << ",";
-cout << "\nEnter total bill : ";
-cin >> num;
-out << num << ",";
-string enter2;
-cout << "\nEnter due date (seperated by / ) : ";
-cin >> enter2;
-out << enter2 << ",";
-string enter3;
+    string enter;
+    int num;
+    int regreading, peak, id;
+    cout << "\n\nENTER CUSTOMER ID : ";
+    cin >> id;
+    out << endl << id << ",";
+
+    cout << "\nEnter bill month : ";
+    cin >> enter;
+    out << enter << ",";
+    cout << "\nEnter regular reading : ";
+    cin >> regreading;
+    out << regreading << ",";
+   
+    cout << "\nEnter peak reading :";
+    cin >> peak;
+    out << peak<< ",";
+    cout << "\nEnter reading entry date (seperated by / ) :";
+    cin >> enter;
+    out << enter << ",";
+    cout << "\nEnter electrcity costs: ";
+    cin >> num;
+    out << num << ",";
+    cout << "\nEnter sales tax : ";
+    cin >> num;
+    out << num << ",";
+    cout << "\nEnter fixed charges : ";
+    cin >> num;
+    out << num << ",";
+
+    cout << "\nEnter total bill : ";
+    cin >> num;
+    out << num << ",";
+    string enter2;
+    cout << "\nEnter due date (seperated by / ) : ";
+    cin >> enter2;
+    out << enter2 << ",";
+    string enter3;
+
+    cout << "Enter status : ";
+    cin >> enter3;
+    out << enter3<<",";
+    cout << "\nEnter due date (seperated by / ) : ";
+    cin >> enter2;
+    out << enter2 << ","<<endl;
+    
+    updatebillcust();
 
 }
 void Employeepressed() {
