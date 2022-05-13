@@ -373,7 +373,7 @@ string input(string line)
 	return line;
 }
 
-void updatebillcust(int reg, int peak, int id)
+void updatebillcust()
 {
 	ifstream fin;
 	ofstream fout;
