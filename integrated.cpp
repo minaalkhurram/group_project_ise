@@ -14,6 +14,12 @@ string Fixed_charges;
 string Billing_amount;
 string due_date;
 string paid_status;
+string CNIC;
+string name;
+string town;
+string phonenum;
+string customer_type;
+string meter_type;
 bool CustomerID(string customer_id) {
 	ifstream file;
 	string digit;
@@ -38,6 +44,115 @@ bool CustomerID(string customer_id) {
 		}
 		return false;
 	}
+}
+void input_customersinfo(ifstream& fin, string customer_id){
+    char buffer[250];
+    if(customer_id=="6055"){
+	fin.getline(buffer, 250, ',');
+	 User_id=buffer;
+  
+    fin.getline(buffer, 250, ',');
+	CNIC=buffer;
+	
+    fin.getline(buffer, 250, ',');
+	name=buffer;
+    
+    fin.getline(buffer, 250, ',');
+	town=buffer;
+  
+    fin.getline(buffer, 250, ',');
+     phonenum=buffer;
+
+    fin.getline(buffer, 250, ',');
+    customer_type=buffer;
+    
+    fin.getline(buffer, 250, ',');
+    meter_type=buffer;
+
+    }
+    else if(customer_id=="6052"){
+        string line;
+        getline(fin, line);
+        fin.getline(buffer, 250, ',');
+	 User_id=buffer;
+      fin.getline(buffer, 250, ',');
+	CNIC=buffer;
+	
+    fin.getline(buffer, 250, ',');
+	name=buffer;
+    
+    fin.getline(buffer, 250, ',');
+	town=buffer;
+  
+    fin.getline(buffer, 250, ',');
+     phonenum=buffer;
+
+    fin.getline(buffer, 250, ',');
+    customer_type=buffer;
+    
+    fin.getline(buffer, 250, ',');
+    meter_type=buffer;
+    
+    }
+    else if(customer_id=="6053"){
+        string line;
+         getline(fin, line);
+        getline(fin,line);
+         fin.getline(buffer, 250, ',');
+	 User_id=buffer;
+      fin.getline(buffer, 250, ',');
+	CNIC=buffer;
+	
+    fin.getline(buffer, 250, ',');
+	name=buffer;
+    
+    fin.getline(buffer, 250, ',');
+	town=buffer;
+  
+    fin.getline(buffer, 250, ',');
+     phonenum=buffer;
+
+    fin.getline(buffer, 250, ',');
+    customer_type=buffer;
+    
+    fin.getline(buffer, 250, ',');
+    meter_type=buffer;
+    }
+    
+    else if(customer_id=="5808"){
+        string line;
+        getline(fin, line);
+        getline(fin,line);
+        getline(fin,line);
+          fin.getline(buffer, 250, ',');
+	 User_id=buffer;
+      fin.getline(buffer, 250, ',');
+	CNIC=buffer;
+	
+    fin.getline(buffer, 250, ',');
+	name=buffer;
+    
+    fin.getline(buffer, 250, ',');
+	town=buffer;
+  
+    fin.getline(buffer, 250, ',');
+     phonenum=buffer;
+
+    fin.getline(buffer, 250, ',');
+    customer_type=buffer;
+    
+    fin.getline(buffer, 250, ',');
+    meter_type=buffer;
+    }
+}
+void output_customersinfo(){
+    cout<<"The name of customer: "<<name<<endl;
+    cout<<"CNIC of customer: "<<CNIC<<endl;
+    cout<<"Meter type: "<<meter_type<<endl;
+    cout<<"Customer type: "<<customer_type<<endl;
+    cout<<"The area in which the customer lives: "<<town<<endl;
+    cout<<"Customers phone number: "<<phonenum<<endl;
+
 }
 void input_bill(ifstream& fin, string customer_id){
      char buffer[250];
@@ -189,13 +304,20 @@ void input_bill(ifstream& fin, string customer_id){
 }
 
 void output_bill(){
+  cout<<"CUSTOMERS INFO: "<<endl;
   cout<<"User Id: "<<User_id<<endl;
+  cout<<"Customers name: "<<name<<endl;
+  cout<<"CNIC of customer: "<<CNIC<<endl;
+  cout<<"Meter type of customer: "<<meter_type<<endl;
+  cout<<"Customer type: "<<endl;
+  cout<<"BILL INFO: "<<endl;
   cout<<"Cost of electricity= "<<cost_of_electricity<<endl;
   cout<<"Tax amount= "<<Sales_tax<<endl;
   cout<<"Fixed charges= "<<Fixed_charges<<endl;
   cout<<"Total bill amount due= "<<Billing_amount<<endl;
   cout<<"The due date: "<<due_date<<endl;
   cout<<"Paid status: "<<paid_status<<endl;
+  
 }
 void Employeepressed() {
 	int check = 0;
@@ -216,18 +338,16 @@ void Employeepressed() {
 		cout << "Update Tariff Tax";	// Function call
 	}
 	else if (check == 4) {
-        string customer_id;
-        cout<<"Customer ID: ";
-        cin>>customer_id;
         ifstream fin;
-	bool check3 = CustomerID(customer_id);
-	if (check3) {
-		fin.open("Customersinfo.txt");
-		string character;
-		while (getline(fin, character)) {
-			cout << character<<endl;
+    string customer_id;
+    cout<<"Enter Customer ID= ";
+    cin>>customer_id;
+	bool check = CustomerID(customer_id);
+	if (check) {
+		fin.open("customersinfo.txt");
+		input_customersinfo(fin,customer_id);
+        output_customersinfo();
 		}
-	}
 	else {
 		cout << "Customer ID is Incorrect" << endl;
 	}
