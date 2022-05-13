@@ -618,6 +618,34 @@ void updatebillcust()
 				}
 				filee.close();
 			}
+			
+			if (num3 == 2)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					getline(fin, line);
+				}
+				cout << line;
+				string recieve = input(line);
+				fstream filee;
+				filee.open("customersinfo.txt", ios::in);
+				int count = 0;
+				while (count < 4)
+				{
+					getline(filee, file_data[count]);
+					count++;
+				}
+				filee.close();
+				file_data[3] = recieve;
+				filee.open("customersinfo2.txt", ios::out);
+				count = 0;
+				for (count = 0; count < 4; count++)
+				{
+					filee << file_data[count] << endl;
+				}
+				filee.close();
+			}
+			
 		}
 	}
 }
