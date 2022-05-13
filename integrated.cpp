@@ -319,60 +319,6 @@ void output_bill(){
   cout<<"Paid status: "<<paid_status<<endl;
   
 }
-void Employeepressed() {
-	int check = 0;
-	//cout << "Update Customer Information" << '\n' << "Update Billing Information" << '\n' << "Update Tariff Tax" << '\t' << "View Customer Information" << endl;
-	cout << "\nPress 1 for updating customer info" << endl;
-	cout << "  Press 2 for updating billing info" << endl;
-	cout << "  Press 3 for tariff tax info" << endl;
-	cout << "  Press 4 to view customer info" << endl;
-    cout << "  Press 5 to view bill information of customer."<<endl;
-	cin >> check;
-	if (check == 1) {
-		cout << "Update Customer Information";	// Function call
-	}
-	else if (check == 2) {
-		cout << "Update Billing Information";	// Function call
-	}
-	else if (check == 3) {
-		cout << "Update Tariff Tax";	// Function call
-	}
-	else if (check == 4) {
-        ifstream fin;
-    string customer_id;
-    cout<<"Enter Customer ID= ";
-    cin>>customer_id;
-	bool check = CustomerID(customer_id);
-	if (check) {
-		fin.open("customersinfo.txt");
-		input_customersinfo(fin,customer_id);
-        output_customersinfo();
-		}
-	else {
-		cout << "Customer ID is Incorrect" << endl;
-	}
-    }
-	else if(check==5){
-           ifstream fin;
-    string customer_id;
-    cout<<"\nEnter Customer ID= ";
-    cin>>customer_id;
-    bool check4=CustomerID(customer_id);
-    if(check4){
-	fin.open("Billinginfo.txt");
-	input_bill(fin,customer_id);
-    output_bill();
-    }
-    else{
-        cout<<"\nNo such customer exists."<<endl<<endl;
-    }
-    }
-}
-
-void Customerpressed() {
-	cout << "Your Bill Information " << endl;
-
-}
 void updatebill()
 {
 	ofstream out;
@@ -417,6 +363,62 @@ string enter3;
 
 
 }
+void Employeepressed() {
+	int check = 0;
+	//cout << "Update Customer Information" << '\n' << "Update Billing Information" << '\n' << "Update Tariff Tax" << '\t' << "View Customer Information" << endl;
+	cout << "\nPress 1 for updating customer info" << endl;
+	cout << "  Press 2 for updating billing info" << endl;
+	cout << "  Press 3 for tariff tax info" << endl;
+	cout << "  Press 4 to view customer info" << endl;
+    cout << "  Press 5 to view bill information of customer."<<endl;
+	cin >> check;
+	if (check == 1) {
+		cout << "Update Customer Information";	// Function call
+	}
+	else if (check == 2) {
+		cout << "Update Billing Information";
+        updatebill();	// Function call
+	}
+	else if (check == 3) {
+		cout << "Update Tariff Tax";	// Function call
+	}
+	else if (check == 4) {
+        ifstream fin;
+    string customer_id;
+    cout<<"Enter Customer ID= ";
+    cin>>customer_id;
+	bool check = CustomerID(customer_id);
+	if (check) {
+		fin.open("customersinfo.txt");
+		input_customersinfo(fin,customer_id);
+        output_customersinfo();
+		}
+	else {
+		cout << "Customer ID is Incorrect" << endl;
+	}
+    }
+	else if(check==5){
+           ifstream fin;
+    string customer_id;
+    cout<<"\nEnter Customer ID= ";
+    cin>>customer_id;
+    bool check4=CustomerID(customer_id);
+    if(check4){
+	fin.open("Billinginfo.txt");
+	input_bill(fin,customer_id);
+    output_bill();
+    }
+    else{
+        cout<<"\nNo such customer exists."<<endl<<endl;
+    }
+    }
+}
+
+void Customerpressed() {
+	cout << "Your Bill Information " << endl;
+
+}
+
 
 bool employee(string username, string password)
 {
