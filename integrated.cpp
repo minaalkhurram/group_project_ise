@@ -40,327 +40,327 @@ bool CustomerID(string customer_id) {
 					return true;
 				}
 			}
-			else{
+			else {
 				i++;
-				
+
 			}
 		}
 		return false;
 	}
 }
-void input_customersinfo(ifstream& fin, string customer_id){
-    char buffer[250];
-    if(customer_id=="6055"){
-	fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-  
-    fin.getline(buffer, 250, ',');
-	CNIC=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	name=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	town=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     phonenum=buffer;
+void input_customersinfo(ifstream& fin, string customer_id) {
+	char buffer[250];
+	if (customer_id == "6055") {
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
 
-    fin.getline(buffer, 250, ',');
-    customer_type=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    meter_type=buffer;
- 
-     fin.getline(buffer, 250, ',');
-     connection_date=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    reg_unit_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		CNIC = buffer;
 
-    fin.getline(buffer, 250, ',');
-    peak_units_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		name = buffer;
 
+		fin.getline(buffer, 250, ',');
+		town = buffer;
 
-    }
-    else if(customer_id=="6052"){
-        string line;
-        getline(fin, line);
-        fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-      fin.getline(buffer, 250, ',');
-	CNIC=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	name=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	town=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     phonenum=buffer;
+		fin.getline(buffer, 250, ',');
+		phonenum = buffer;
 
-    fin.getline(buffer, 250, ',');
-    customer_type=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    meter_type=buffer;
-    
-     fin.getline(buffer, 250, ',');
-     connection_date=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    reg_unit_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		customer_type = buffer;
 
-    fin.getline(buffer, 250, ',');
-    peak_units_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		meter_type = buffer;
+
+		fin.getline(buffer, 250, ',');
+		connection_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		reg_unit_consumed = buffer;
+
+		fin.getline(buffer, 250, ',');
+		peak_units_consumed = buffer;
 
 
-    }
-    else if(customer_id=="6053"){
-        string line;
-         getline(fin, line);
-        getline(fin,line);
-         fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-      fin.getline(buffer, 250, ',');
-	CNIC=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	name=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	town=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     phonenum=buffer;
+	}
+	else if (customer_id == "6052") {
+		string line;
+		getline(fin, line);
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
+		fin.getline(buffer, 250, ',');
+		CNIC = buffer;
 
-    fin.getline(buffer, 250, ',');
-    customer_type=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    meter_type=buffer;
-     fin.getline(buffer, 250, ',');
-     connection_date=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    reg_unit_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		name = buffer;
 
-    fin.getline(buffer, 250, ',');
-    peak_units_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		town = buffer;
 
+		fin.getline(buffer, 250, ',');
+		phonenum = buffer;
 
-    }
-    
-    else if(customer_id=="5808"){
-        string line;
-        getline(fin, line);
-        getline(fin,line);
-        getline(fin,line);
-          fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-      fin.getline(buffer, 250, ',');
-	CNIC=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	name=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	town=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     phonenum=buffer;
+		fin.getline(buffer, 250, ',');
+		customer_type = buffer;
 
-    fin.getline(buffer, 250, ',');
-    customer_type=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    meter_type=buffer;
-     fin.getline(buffer, 250, ',');
-     connection_date=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    reg_unit_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		meter_type = buffer;
 
-    fin.getline(buffer, 250, ',');
-    peak_units_consumed=buffer;
+		fin.getline(buffer, 250, ',');
+		connection_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		reg_unit_consumed = buffer;
+
+		fin.getline(buffer, 250, ',');
+		peak_units_consumed = buffer;
 
 
-    }
+	}
+	else if (customer_id == "6053") {
+		string line;
+		getline(fin, line);
+		getline(fin, line);
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
+		fin.getline(buffer, 250, ',');
+		CNIC = buffer;
+
+		fin.getline(buffer, 250, ',');
+		name = buffer;
+
+		fin.getline(buffer, 250, ',');
+		town = buffer;
+
+		fin.getline(buffer, 250, ',');
+		phonenum = buffer;
+
+		fin.getline(buffer, 250, ',');
+		customer_type = buffer;
+
+		fin.getline(buffer, 250, ',');
+		meter_type = buffer;
+		fin.getline(buffer, 250, ',');
+		connection_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		reg_unit_consumed = buffer;
+
+		fin.getline(buffer, 250, ',');
+		peak_units_consumed = buffer;
+
+
+	}
+
+	else if (customer_id == "5808") {
+		string line;
+		getline(fin, line);
+		getline(fin, line);
+		getline(fin, line);
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
+		fin.getline(buffer, 250, ',');
+		CNIC = buffer;
+
+		fin.getline(buffer, 250, ',');
+		name = buffer;
+
+		fin.getline(buffer, 250, ',');
+		town = buffer;
+
+		fin.getline(buffer, 250, ',');
+		phonenum = buffer;
+
+		fin.getline(buffer, 250, ',');
+		customer_type = buffer;
+
+		fin.getline(buffer, 250, ',');
+		meter_type = buffer;
+		fin.getline(buffer, 250, ',');
+		connection_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		reg_unit_consumed = buffer;
+
+		fin.getline(buffer, 250, ',');
+		peak_units_consumed = buffer;
+
+
+	}
 }
-void output_customersinfo(){
-    cout<<"The name of customer: "<<name<<endl;
-    cout<<"CNIC of customer: "<<CNIC<<endl;
-    cout<<"Meter type: "<<meter_type<<endl;
-    cout<<"Customer type: "<<customer_type<<endl;
-    cout<<"The area in which the customer lives: "<<town<<endl;
-    cout<<"Customers phone number: "<<phonenum<<endl;
+void output_customersinfo() {
+	cout << "The name of customer: " << name << endl;
+	cout << "CNIC of customer: " << CNIC << endl;
+	cout << "Meter type: " << meter_type << endl;
+	cout << "Customer type: " << customer_type << endl;
+	cout << "The area in which the customer lives: " << town << endl;
+	cout << "Customers phone number: " << phonenum << endl;
 
 }
-void input_bill(ifstream& fin, string customer_id){
-     char buffer[250];
-    if(customer_id=="6055"){
-	fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-  
-    fin.getline(buffer, 250, ',');
-	Month=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	Current_meter_reading_reg=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	current_meter_reading_peak=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     entry_date=buffer;
+void input_bill(ifstream& fin, string customer_id) {
+	char buffer[250];
+	if (customer_id == "6055") {
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
 
-    fin.getline(buffer, 250, ',');
-    cost_of_electricity=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Sales_tax=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Fixed_charges=buffer;
+		fin.getline(buffer, 250, ',');
+		Month = buffer;
 
-    fin.getline(buffer, 250, ',');
-    Billing_amount=buffer;
-   
-    fin.getline(buffer, 250, ',');;
-    due_date=buffer;
-   
-    fin.getline(buffer, 250, ',');
-    paid_status=buffer;
-    }
-    else if(customer_id=="6052"){
-        string line;
-        getline(fin, line);
-        fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-  
-    fin.getline(buffer, 250, ',');
-	Month=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	Current_meter_reading_reg=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	current_meter_reading_peak=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     entry_date=buffer;
+		fin.getline(buffer, 250, ',');
+		Current_meter_reading_reg = buffer;
 
-    fin.getline(buffer, 250, ',');
-    cost_of_electricity=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Sales_tax=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Fixed_charges=buffer;
+		fin.getline(buffer, 250, ',');
+		current_meter_reading_peak = buffer;
 
-    fin.getline(buffer, 250, ',');
-    Billing_amount=buffer;
-   
-    fin.getline(buffer, 250, ',');;
-    due_date=buffer;
-   
-    fin.getline(buffer, 250, ',');
-    paid_status=buffer;
-    }
-    else if(customer_id=="6053"){
-        string line;
-        getline(fin,line);
-        getline(fin,line);
-        fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-  
-    fin.getline(buffer, 250, ',');
-	Month=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	Current_meter_reading_reg=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	current_meter_reading_peak=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     entry_date=buffer;
+		fin.getline(buffer, 250, ',');
+		entry_date = buffer;
 
-    fin.getline(buffer, 250, ',');
-    cost_of_electricity=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Sales_tax=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Fixed_charges=buffer;
+		fin.getline(buffer, 250, ',');
+		cost_of_electricity = buffer;
 
-    fin.getline(buffer, 250, ',');
-    Billing_amount=buffer;
-   
-    fin.getline(buffer, 250, ',');;
-    due_date=buffer;
-   
-    fin.getline(buffer, 250, ',');
-    paid_status=buffer;
-    }
-    else if(customer_id=="5808"){
-        string line;
-        getline(fin, line);
-        getline(fin,line);
-        getline(fin,line);
-        fin.getline(buffer, 250, ',');
-	 User_id=buffer;
-  
-    fin.getline(buffer, 250, ',');
-	Month=buffer;
-	
-    fin.getline(buffer, 250, ',');
-	Current_meter_reading_reg=buffer;
-    
-    fin.getline(buffer, 250, ',');
-	current_meter_reading_peak=buffer;
-  
-    fin.getline(buffer, 250, ',');
-     entry_date=buffer;
+		fin.getline(buffer, 250, ',');
+		Sales_tax = buffer;
 
-    fin.getline(buffer, 250, ',');
-    cost_of_electricity=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Sales_tax=buffer;
-    
-    fin.getline(buffer, 250, ',');
-    Fixed_charges=buffer;
+		fin.getline(buffer, 250, ',');
+		Fixed_charges = buffer;
 
-    fin.getline(buffer, 250, ',');
-    Billing_amount=buffer;
-   
-    fin.getline(buffer, 250, ',');;
-    due_date=buffer;
-   
-    fin.getline(buffer, 250, ',');
-    paid_status=buffer;
-    }
+		fin.getline(buffer, 250, ',');
+		Billing_amount = buffer;
+
+		fin.getline(buffer, 250, ',');;
+		due_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		paid_status = buffer;
+	}
+	else if (customer_id == "6052") {
+		string line;
+		getline(fin, line);
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Month = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Current_meter_reading_reg = buffer;
+
+		fin.getline(buffer, 250, ',');
+		current_meter_reading_peak = buffer;
+
+		fin.getline(buffer, 250, ',');
+		entry_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		cost_of_electricity = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Sales_tax = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Fixed_charges = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Billing_amount = buffer;
+
+		fin.getline(buffer, 250, ',');;
+		due_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		paid_status = buffer;
+	}
+	else if (customer_id == "6053") {
+		string line;
+		getline(fin, line);
+		getline(fin, line);
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Month = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Current_meter_reading_reg = buffer;
+
+		fin.getline(buffer, 250, ',');
+		current_meter_reading_peak = buffer;
+
+		fin.getline(buffer, 250, ',');
+		entry_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		cost_of_electricity = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Sales_tax = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Fixed_charges = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Billing_amount = buffer;
+
+		fin.getline(buffer, 250, ',');;
+		due_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		paid_status = buffer;
+	}
+	else if (customer_id == "5808") {
+		string line;
+		getline(fin, line);
+		getline(fin, line);
+		getline(fin, line);
+		fin.getline(buffer, 250, ',');
+		User_id = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Month = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Current_meter_reading_reg = buffer;
+
+		fin.getline(buffer, 250, ',');
+		current_meter_reading_peak = buffer;
+
+		fin.getline(buffer, 250, ',');
+		entry_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		cost_of_electricity = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Sales_tax = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Fixed_charges = buffer;
+
+		fin.getline(buffer, 250, ',');
+		Billing_amount = buffer;
+
+		fin.getline(buffer, 250, ',');;
+		due_date = buffer;
+
+		fin.getline(buffer, 250, ',');
+		paid_status = buffer;
+	}
 }
 
-void output_bill(){
-  cout<<"\nCUSTOMERS INFO: "<<endl;
-  cout<<"User Id: "<<User_id<<endl;
-  cout<<"Customers name: "<<name<<endl;
-  cout<<"CNIC of customer: "<<CNIC<<endl;
-  cout<<"Meter type of customer: "<<meter_type<<endl;
-  cout<<"Customer type: "<<customer_type<<endl<<endl;
-  cout<<"BILL INFO: "<<endl;
-  cout<<"Cost of electricity= "<<cost_of_electricity<<endl;
-  cout<<"Tax amount= "<<Sales_tax<<endl;
-  cout<<"Fixed charges= "<<Fixed_charges<<endl;
-  cout<<"Total bill amount due= "<<Billing_amount<<endl;
-  cout<<"The due date: "<<due_date<<endl;
-  cout<<"Paid status: "<<paid_status<<endl;
-  
+void output_bill() {
+	cout << "\nCUSTOMERS INFO: " << endl;
+	cout << "User Id: " << User_id << endl;
+	cout << "Customers name: " << name << endl;
+	cout << "CNIC of customer: " << CNIC << endl;
+	cout << "Meter type of customer: " << meter_type << endl;
+	cout << "Customer type: " << customer_type << endl << endl;
+	cout << "BILL INFO: " << endl;
+	cout << "Cost of electricity= " << cost_of_electricity << endl;
+	cout << "Tax amount= " << Sales_tax << endl;
+	cout << "Fixed charges= " << Fixed_charges << endl;
+	cout << "Total bill amount due= " << Billing_amount << endl;
+	cout << "The due date: " << due_date << endl;
+	cout << "Paid status: " << paid_status << endl;
+
 }
 
 string input(string line)
@@ -487,57 +487,57 @@ void updatebillcust()
 }
 void updatebill()
 {
-	
-    ofstream out;
-    out.open("billinginfo.txt", ios::app);
 
-    string enter;
-    int num;
-    int regreading, peak, id;
-    cout << "\n\nENTER CUSTOMER ID : ";
-    cin >> id;
-    out << endl << id << ",";
+	ofstream out;
+	out.open("billinginfo.txt", ios::app);
 
-    cout << "\nEnter bill month : ";
-    cin >> enter;
-    out << enter << ",";
-    cout << "\nEnter regular reading : ";
-    cin >> regreading;
-    out << regreading << ",";
-   
-    cout << "\nEnter peak reading :";
-    cin >> peak;
-    out << peak<< ",";
-    cout << "\nEnter reading entry date (seperated by / ) :";
-    cin >> enter;
-    out << enter << ",";
-    cout << "\nEnter electrcity costs: ";
-    cin >> num;
-    out << num << ",";
-    cout << "\nEnter sales tax : ";
-    cin >> num;
-    out << num << ",";
-    cout << "\nEnter fixed charges : ";
-    cin >> num;
-    out << num << ",";
+	string enter;
+	int num;
+	int regreading, peak, id;
+	cout << "\n\nENTER CUSTOMER ID : ";
+	cin >> id;
+	out << endl << id << ",";
 
-    cout << "\nEnter total bill : ";
-    cin >> num;
-    out << num << ",";
-    string enter2;
-    cout << "\nEnter due date (seperated by / ) : ";
-    cin >> enter2;
-    out << enter2 << ",";
-    string enter3;
+	cout << "\nEnter bill month : ";
+	cin >> enter;
+	out << enter << ",";
+	cout << "\nEnter regular reading : ";
+	cin >> regreading;
+	out << regreading << ",";
 
-    cout << "Enter status : ";
-    cin >> enter3;
-    out << enter3<<",";
-    cout << "\nEnter due date (seperated by / ) : ";
-    cin >> enter2;
-    out << enter2 << ","<<endl;
-    
-    updatebillcust();
+	cout << "\nEnter peak reading :";
+	cin >> peak;
+	out << peak << ",";
+	cout << "\nEnter reading entry date (seperated by / ) :";
+	cin >> enter;
+	out << enter << ",";
+	cout << "\nEnter electrcity costs: ";
+	cin >> num;
+	out << num << ",";
+	cout << "\nEnter sales tax : ";
+	cin >> num;
+	out << num << ",";
+	cout << "\nEnter fixed charges : ";
+	cin >> num;
+	out << num << ",";
+
+	cout << "\nEnter total bill : ";
+	cin >> num;
+	out << num << ",";
+	string enter2;
+	cout << "\nEnter due date (seperated by / ) : ";
+	cin >> enter2;
+	out << enter2 << ",";
+	string enter3;
+
+	cout << "Enter status : ";
+	cin >> enter3;
+	out << enter3 << ",";
+	cout << "\nEnter due date (seperated by / ) : ";
+	cin >> enter2;
+	out << enter2 << "," << endl;
+
+	updatebillcust();
 
 }
 void Employeepressed() {
@@ -547,72 +547,74 @@ void Employeepressed() {
 	cout << " Press 2 for updating billing info" << endl;
 	cout << " Press 3 for tariff tax info" << endl;
 	cout << " Press 4 to view customer info" << endl;
-    cout << " Press 5 to view bill information of customer."<<endl;
+	cout << " Press 5 to view bill information of customer." << endl;
 	cin >> check;
 	if (check == 1) {
-		cout << "Update Customer Information";	// Function call
+		cout << "Update Customer Information";
+		updatebillcust();
+		// Function call
 	}
 	else if (check == 2) {
 		cout << "Update Billing Information";
-        updatebill();	// Function call
+		updatebill();	// Function call
 	}
 	else if (check == 3) {
 		cout << "Update Tariff Tax";	// Function call
 	}
 	else if (check == 4) {
-        ifstream fin;
-    string customer_id;
-    cout<<"Enter Customer ID= ";
-    cin>>customer_id;
-	bool check = CustomerID(customer_id);
-	if (check) {
-		fin.open("customersinfo.txt");
-		input_customersinfo(fin,customer_id);
-        output_customersinfo();
+		ifstream fin;
+		string customer_id;
+		cout << "Enter Customer ID= ";
+		cin >> customer_id;
+		bool check = CustomerID(customer_id);
+		if (check) {
+			fin.open("customersinfo.txt");
+			input_customersinfo(fin, customer_id);
+			output_customersinfo();
 		}
-	else {
-		cout << "Customer ID is Incorrect" << endl;
+		else {
+			cout << "Customer ID is Incorrect" << endl;
+		}
 	}
-    }
-	else if(check==5){
-           ifstream fin;
-    string customer_id;
-    cout<<"\nEnter Customer ID= ";
-    cin>>customer_id;
-    bool check4=CustomerID(customer_id);
-    if(check4){
-	fin.open("Billinginfo.txt");
-	input_bill(fin,customer_id);
-    output_bill();
-    }
-    else{
-        cout<<"\nNo such customer exists."<<endl<<endl;
-    }
-    }
+	else if (check == 5) {
+		ifstream fin;
+		string customer_id;
+		cout << "\nEnter Customer ID= ";
+		cin >> customer_id;
+		bool check4 = CustomerID(customer_id);
+		if (check4) {
+			fin.open("Billinginfo.txt");
+			input_bill(fin, customer_id);
+			output_bill();
+		}
+		else {
+			cout << "\nNo such customer exists." << endl << endl;
+		}
+	}
 }
-void customerpressed(string username){
-    ifstream fin, file;
-    string customer_id;
-    customer_id=username;
-    bool check4=CustomerID(customer_id);
-    if(check4){
-	fin.open("Billinginfo.txt");
-    file.open("CustomersInfo.txt");
-     cout<<"Your bill information is: "<<endl;
-	input_bill(fin,customer_id);
-    input_customersinfo(file, customer_id);
-    output_bill();
-    }
-    else{
-        cout<<"\nNo such customer exists."<<endl<<endl;
-    }
+void customerpressed(string username) {
+	ifstream fin, file;
+	string customer_id;
+	customer_id = username;
+	bool check4 = CustomerID(customer_id);
+	if (check4) {
+		fin.open("Billinginfo.txt");
+		file.open("CustomersInfo.txt");
+		cout << "Your bill information is: " << endl;
+		input_bill(fin, customer_id);
+		input_customersinfo(file, customer_id);
+		output_bill();
+	}
+	else {
+		cout << "\nNo such customer exists." << endl << endl;
+	}
 }
-   
-    
+
+
 
 bool employee(string username, string password)
 {
-		ifstream fin;
+	ifstream fin;
 	string line;
 	bool check2 = false;
 	fin.open("employeesdata.txt");
@@ -624,7 +626,7 @@ bool employee(string username, string password)
 
 			for (int i = 0; username[i] != '\0'; i++)
 			{
-				if (username[i] == line[i]&&line[i]!=',')
+				if (username[i] == line[i] && line[i] != ',')
 				{
 					check2 = true;
 				}
@@ -638,7 +640,7 @@ bool employee(string username, string password)
 				int size = username.length();
 				for (int i = size + 1, j = 0; password[j] != '\0'; i++, j++)
 				{
-					if (password[j] == line[i]&&line[i]!='\0')
+					if (password[j] == line[i] && line[i] != '\0')
 					{
 						check2 = true;
 
@@ -654,7 +656,7 @@ bool employee(string username, string password)
 				break;
 			}
 		}
-		}
+	}
 	if (check2 == false)
 	{
 		cout << "USERNAME OR PASS INCORECT ";
@@ -679,7 +681,7 @@ bool customer(string username, string password)
 
 			for (int i = 0; username[i] != '\0'; i++)
 			{
-				if (username[i] == line[i]&&line[i]!=',')
+				if (username[i] == line[i] && line[i] != ',')
 				{
 					check2 = true;
 				}
@@ -693,7 +695,7 @@ bool customer(string username, string password)
 				int size = username.length();
 				for (int i = size + 1, j = 0; password[j] != '\0'; i++, j++)
 				{
-					if (password[j] == line[i]&&line[i]!='\0')
+					if (password[j] == line[i] && line[i] != '\0')
 					{
 						check2 = true;
 
@@ -724,7 +726,7 @@ int main()
 
 	string username;
 	string password;
-	
+
 	bool login = false;
 	int m = 0;
 	while (m == 0 || m == 1)
@@ -737,13 +739,12 @@ int main()
 		if (check == 'e')
 		{
 			login = employee(username, password);
-            Employeepressed();
+		
 		}
 		else
 		{
 			login = customer(username, password);
-            cout<<"\n\nCustomer can view bill info only."<<endl;
-            customerpressed(username);
+		
 		}
 		if (login == false)
 		{
@@ -761,12 +762,22 @@ int main()
 
 
 		}
+		if (m == 3)
+		{
+			if (check == 'e')
+				Employeepressed();
+			else if (check == 'c')
+			{
+				cout << "\n\nCustomer can view bill info only." << endl;
+				customerpressed(username);
+			}
+		}
 
 
 	}
-    
-    system("pause");
-    return 0;
+
+	system("pause");
+	return 0;
 
 
-	}
+}
