@@ -23,6 +23,8 @@ string meter_type;
 string connection_date;
 string reg_unit_consumed;
 string peak_units_consumed;
+int count1=0;
+int count2=0;
 bool CustomerID(string customer_id) {
 	ifstream file;
 	string digit;
@@ -234,6 +236,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
+         if(paid_status=="paid"){
+              count1++;
+         }
+         else{
+         count2++;
+         }
 	}
 	else if (customer_id == "6052") {
 		string line;
@@ -270,6 +278,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
+         if(paid_status=="paid"){
+              count1++;
+         }
+         else{
+         count2++;
+         }
 	}
 	else if (customer_id == "6053") {
 		string line;
@@ -307,6 +321,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
+         if(paid_status=="paid"){
+              count1++;
+         }
+         else{
+         count2++;
+         }
 	}
 	else if (customer_id == "5808") {
 		string line;
@@ -345,6 +365,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
+         if(paid_status=="paid"){
+              count1++;
+         }
+         else{
+         count2++;
+         }
 	}
 }
 
@@ -364,7 +390,12 @@ void output_bill() {
 	cout << "\n\t\t\t\t\t\tPaid status: " << paid_status << endl;
 
 }
+void showreport()
+{
+        cout<<"\n\t\t\t\t\t\tNo of people who have paid the bill= "<<count1<<endl;
+        cout<<"\n\t\t\t\t\t\tNo of people that did not pay their bill yet= "<<count2<<endl;
 
+}
 string input(string line)
 {
 	system("cls");
@@ -716,12 +747,15 @@ void updatebill()
 
 void Employeepressed() {
 	int check = 0;
+    
 	//cout << "Update Customer Information" << '\n' << "Update Billing Information" << '\n' << "Update Tariff Tax" << '\t' << "View Customer Information" << endl;
 	cout << "\n\n\n\n\t\t\t\tPress 1 for updating customer info" << endl;
 	cout << "\n\n\t\t\t\tPress 2 for updating billing info" << endl;
 	cout << "\n\n\t\t\t\tPress 3 for tariff tax info" << endl;
 	cout << "\n\n\t\t\t\tPress 4 to view customer info" << endl;
 	cout << "\n\n\t\t\t\tPress 5 to view bill information of customer." << endl;
+    cout << "\n\n\t\t\t\tPress 6 to view the report."<<endl;
+  
 	cin >> check;
 	if (check == 1) {
 		system("cls");
@@ -772,6 +806,35 @@ void Employeepressed() {
 			system("cls");
 			cout << "\n\n\t\t\t\t\t\tNo such customer exists." << endl << endl;
 		}
+
+	}
+    else if(check==6){
+        system("cls");
+	ifstream fin;
+    ifstream finn;
+    int i=0;
+    string customer_id[4], line;
+    string customerid;
+        char buffer[10];
+	fin.open("Billinginfo.txt");
+    finn.open("Billinginfo.txt");
+    do
+    {
+      
+       fin.getline(buffer, 10, ',');
+       customer_id[i]=buffer;
+       i++;
+    }
+    while(getline(fin,line) && i<4);
+    i=0;
+    while(i<4){
+          customerid=customer_id[i];
+          input_bill(finn, customerid);
+          i++;
+     }
+      showreport(); 
+
+   
 	}
 }
 
