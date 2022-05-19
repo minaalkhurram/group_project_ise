@@ -745,12 +745,6 @@ void updatebill()
 
 }
 
-#include<iostream>
-#include<fstream>
-#include<string>
-#include <cstdlib>
-using namespace std;
-
 void ExpiryCheck() {
 	ifstream fin;
 	string digit;
@@ -839,7 +833,7 @@ void ExpiryCheck() {
 
 				int p = l / 10;
 				int q = m / 10;
-				cout << "\n\n\t\t\t\t\t\tnumber " << r;
+				cout << "\n\n\t\t\t\t\t\tCustomer number " << r;
 				if (p < q && p != q) {
 					cout << " Not Expired" << endl;
 				}
@@ -848,7 +842,7 @@ void ExpiryCheck() {
 				}
 			}
 			else {
-				cout <<"\n\n\t\t\t\t\t\t Number " << r << " ";
+				cout <<"\n\n\t\t\t\t\t\tCustomer Number " << r << " ";
 				if (l < m && l != m) {
 					cout << " Not Expired" << endl;
 				}
