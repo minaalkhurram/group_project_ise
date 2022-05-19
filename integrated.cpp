@@ -2,6 +2,7 @@
 #include<fstream>
 #include<string.h>
 #include<string>
+#include <cstdlib>
 using namespace std;
 string User_id;
 string Month;
@@ -390,12 +391,14 @@ void output_bill() {
 	cout << "\n\t\t\t\t\t\tPaid status: " << paid_status << endl;
 
 }
+
 void showreport()
 {
-	cout << "\n\t\t\t\t\t\tNo of people who have paid the bill= " << count1 << endl;
-	cout << "\n\t\t\t\t\t\tNo of people that did not pay their bill yet= " << count2 << endl;
+	cout << "\n\n\n\t\t\t\t\tNo of people who have paid the bill= " << count1 << endl;
+	cout << "\n\n\n\t\t\t\t\tNo of people that did not pay their bill yet= " << count2 << endl;
 
 }
+
 string input(string line)
 {
 	system("cls");
@@ -405,6 +408,76 @@ string input(string line)
 	cin >> store;
 	line = store;
 	return line;
+}
+
+void updatecnic()
+{
+	ifstream fin1;
+	string line1;
+	string cnic;
+
+
+	bool flag = true;
+	int t = 0, f = 0;
+	system("cls");
+	cout << "\n\n\n\t\t\t\t\t\tEnter your CNIC: ";
+	cin >> cnic;
+	fin1.open("nadradb.txt");
+	int check = 0;
+	while (getline(fin1, line1) && (!fin1.eof()))
+	{
+
+
+		for (int i = 0; cnic[i] != '\0'; i++)
+		{
+			if (cnic[i] == line1[i])
+
+			{
+				t++;
+			}
+
+
+			if (t == 13 && check == 1)
+			{
+				f++;
+			}
+
+		}
+
+		check = 1;
+
+	}
+
+	ifstream fin;
+	ofstream fout;
+	string line, line2, digit;
+	int count = 0;
+	int str_length;
+	fin.open("nadradb.txt");
+	char inputFile;
+	string file_data[4]; string recieve;
+	getline(fin, line);
+	fout << line;
+	//cout << line;
+	recieve = input(line);
+	fin.close();
+	fin.open("nadradb.txt");
+	count = 0;
+	while (count < 4)
+	{
+		getline(fin, file_data[count]);
+		count++;
+	}
+	fin.close();
+	file_data[f] = recieve;
+	fstream filee;
+	filee.open("nadradb.txt", ios::out);
+	count = 0;
+	for (count = 0; count < 4; count++)
+	{
+		filee << file_data[count] << endl;
+	}
+	filee.close();
 }
 
 void UpdateTaxInfo()
@@ -750,7 +823,7 @@ void ExpiryCheck() {
 	string digit;
 	string ar[4];
 	char a[4], b[4];
-	fin.open("nadrab.txt");
+	fin.open("nadradb.txt");
 
 	short loop = 0;
 	if (fin.is_open()) {
@@ -833,7 +906,7 @@ void ExpiryCheck() {
 
 				int p = l / 10;
 				int q = m / 10;
-				cout << "\n\n\t\t\t\t\t\tCustomer number " << r;
+				cout << "\n\n\n\t\t\t\t\t\tCustomer number " << r;
 				if (p < q && p != q) {
 					cout << " Not Expired" << endl;
 				}
@@ -842,7 +915,7 @@ void ExpiryCheck() {
 				}
 			}
 			else {
-				cout <<"\n\n\t\t\t\t\t\tCustomer Number " << r << " ";
+				cout << "\n\n\n\t\t\t\t\t\tCustomer Number " << r << " ";
 				if (l < m && l != m) {
 					cout << " Not Expired" << endl;
 				}
@@ -857,7 +930,6 @@ void ExpiryCheck() {
 		cout << "File Not Found";
 	}
 }
-
 
 void Employeepressed() {
 	int check = 0;
@@ -959,20 +1031,31 @@ void Employeepressed() {
 
 void customerpressed(string username) {
 	ifstream fin, file;
+	int check = 0;
 	string customer_id;
-	customer_id = username;
-	bool check4 = CustomerID(customer_id);
-	if (check4) {
-		fin.open("Billinginfo.txt");
-		file.open("CustomersInfo.txt");
-		cout << "\n\n\t\t\t\t\t\tYour bill information is: " << endl;
-		input_bill(fin, customer_id);
-		input_customersinfo(file, customer_id);
-		output_bill();
+	cout << "\n\n\n\n\t\t\t\tPress 1 to view bill" << endl;
+	cout << "\n\n\t\t\t\tPress 2 to update CNIC expiry date" << endl;
+	cin >> check;
+	if (check == 1)
+	{
+		customer_id = username;
+		bool check4 = CustomerID(customer_id);
+		if (check4) {
+			fin.open("Billinginfo.txt");
+			file.open("CustomersInfo.txt");
+			cout << "\n\n\t\t\t\t\t\tYour bill information is: " << endl;
+			input_bill(fin, customer_id);
+			input_customersinfo(file, customer_id);
+			output_bill();
+		}
+		else {
+			system("cls");
+			cout << "\n\n\t\t\t\t\t\tNo such customer exists." << endl << endl;
+		}
 	}
-	else {
-		system("cls");
-		cout << "\n\n\t\t\t\t\t\tNo such customer exists." << endl << endl;
+	else if (check == 2)
+	{
+		updatecnic();
 	}
 }
 
@@ -1132,7 +1215,7 @@ int main()
 				Employeepressed();
 			else if (check == 'c')
 			{
-				cout << "\n\n\t\t\t\t\tCustomer can view bill info only." << endl;
+				
 				customerpressed(username);
 			}
 		}
