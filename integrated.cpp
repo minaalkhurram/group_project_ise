@@ -23,8 +23,8 @@ string meter_type;
 string connection_date;
 string reg_unit_consumed;
 string peak_units_consumed;
-int count1=0;
-int count2=0;
+int count1 = 0;
+int count2 = 0;
 bool CustomerID(string customer_id) {
 	ifstream file;
 	string digit;
@@ -236,12 +236,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
-         if(paid_status=="paid"){
-              count1++;
-         }
-         else{
-         count2++;
-         }
+		if (paid_status == "paid") {
+			count1++;
+		}
+		else {
+			count2++;
+		}
 	}
 	else if (customer_id == "6052") {
 		string line;
@@ -278,12 +278,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
-         if(paid_status=="paid"){
-              count1++;
-         }
-         else{
-         count2++;
-         }
+		if (paid_status == "paid") {
+			count1++;
+		}
+		else {
+			count2++;
+		}
 	}
 	else if (customer_id == "6053") {
 		string line;
@@ -321,12 +321,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
-         if(paid_status=="paid"){
-              count1++;
-         }
-         else{
-         count2++;
-         }
+		if (paid_status == "paid") {
+			count1++;
+		}
+		else {
+			count2++;
+		}
 	}
 	else if (customer_id == "5808") {
 		string line;
@@ -365,12 +365,12 @@ void input_bill(ifstream& fin, string customer_id) {
 
 		fin.getline(buffer, 250, ',');
 		paid_status = buffer;
-         if(paid_status=="paid"){
-              count1++;
-         }
-         else{
-         count2++;
-         }
+		if (paid_status == "paid") {
+			count1++;
+		}
+		else {
+			count2++;
+		}
 	}
 }
 
@@ -392,8 +392,8 @@ void output_bill() {
 }
 void showreport()
 {
-        cout<<"\n\t\t\t\t\t\tNo of people who have paid the bill= "<<count1<<endl;
-        cout<<"\n\t\t\t\t\t\tNo of people that did not pay their bill yet= "<<count2<<endl;
+	cout << "\n\t\t\t\t\t\tNo of people who have paid the bill= " << count1 << endl;
+	cout << "\n\t\t\t\t\t\tNo of people that did not pay their bill yet= " << count2 << endl;
 
 }
 string input(string line)
@@ -560,7 +560,7 @@ void updatebillcust()
 
 	if (num == 1)
 	{
-		
+
 		string file_data[4];
 		cout << "\n\n\n\t\t\t\t\t\tIf single phase press 1\n\n\t\t\t\t\t\tIf three phase press 3\n";
 		cin >> num2;
@@ -755,7 +755,7 @@ void ExpiryCheck() {
 	ifstream fin;
 	string digit;
 	string ar[4];
-	char a[4],b[4];
+	char a[4], b[4];
 	fin.open("nadrab.txt");
 
 	short loop = 0;
@@ -767,12 +767,12 @@ void ExpiryCheck() {
 
 		}cout << endl;
 
-		for (int z = 0,n=0,r=0; z < 4; z++)
+		for (int z = 0, n = 0, r = 0; z < 4; z++)
 		{
 			for (int i = 0, j = 0, k = 0, count = 0; ar[z][i] != ' '; i++)
 			{
 				if (ar[z][i] == '/') {
-				
+
 					k = i;
 					k++;
 					a[j] = ar[z][k];
@@ -794,13 +794,13 @@ void ExpiryCheck() {
 				}
 			}
 			int l = atoi(a);
-			if (n != 0 && n!=2) {
-		
+			if (n != 0 && n != 2) {
+
 				int p = l / 10;
 			}
-			
 
-			
+
+
 			for (int i = 0, count1 = 0, k = 0, j = 0; ar[z][i] != ' '; i++) {
 				if (ar[z][i] == ',') {
 					count1++;
@@ -809,9 +809,9 @@ void ExpiryCheck() {
 
 					k = i;
 					k++;
-			
+
 					if (ar[z][k] == '/') {
-			
+
 						i = k;
 						k++;
 						b[j] = ar[z][k];
@@ -835,11 +835,11 @@ void ExpiryCheck() {
 				}
 			}n++;
 			int m = atoi(b);
-			if (r != 0 && r!=2) {
-				
+			if (r != 0 && r != 2) {
+
 				int p = l / 10;
 				int q = m / 10;
-				cout << "number " << r;
+				cout << "\n\n\t\t\t\t\t\tnumber " << r;
 				if (p < q && p != q) {
 					cout << " Not Expired" << endl;
 				}
@@ -848,7 +848,7 @@ void ExpiryCheck() {
 				}
 			}
 			else {
-				cout<<" Number "<<r<<" " ;
+				cout <<"\n\n\t\t\t\t\t\t Number " << r << " ";
 				if (l < m && l != m) {
 					cout << " Not Expired" << endl;
 				}
@@ -867,16 +867,16 @@ void ExpiryCheck() {
 
 void Employeepressed() {
 	int check = 0;
-    
+
 	//cout << "Update Customer Information" << '\n' << "Update Billing Information" << '\n' << "Update Tariff Tax" << '\t' << "View Customer Information" << endl;
 	cout << "\n\n\n\n\t\t\t\tPress 1 for updating customer info" << endl;
 	cout << "\n\n\t\t\t\tPress 2 for updating billing info" << endl;
 	cout << "\n\n\t\t\t\tPress 3 for tariff tax info" << endl;
 	cout << "\n\n\t\t\t\tPress 4 to view customer info" << endl;
 	cout << "\n\n\t\t\t\tPress 5 to view bill information of customer." << endl;
-    cout << "\n\n\t\t\t\tPress 6 to view the report."<<endl;
+	cout << "\n\n\t\t\t\tPress 6 to view the report." << endl;
 	cout << "\n\n\t\t\t\tPress 7 to view expired CNIC of customers." << endl;
-  
+
 	cin >> check;
 	if (check == 1) {
 		system("cls");
@@ -929,36 +929,38 @@ void Employeepressed() {
 		}
 
 	}
-    else if(check==6){
-        system("cls");
-	ifstream fin;
-    ifstream finn;
-    int i=0;
-    string customer_id[4], line;
-    string customerid;
-        char buffer[10];
-	fin.open("Billinginfo.txt");
-    finn.open("Billinginfo.txt");
-    do
-    {
-      
-       fin.getline(buffer, 10, ',');
-       customer_id[i]=buffer;
-       i++;
-    }
-    while(getline(fin,line) && i<4);
-    i=0;
-    while(i<4){
-          customerid=customer_id[i];
-          input_bill(finn, customerid);
-          i++;
-     }
-      showreport(); 
+	else if (check == 6) {
+		system("cls");
+		ifstream fin;
+		ifstream finn;
+		int i = 0;
+		string customer_id[4], line;
+		string customerid;
+		char buffer[10];
+		fin.open("Billinginfo.txt");
+		finn.open("Billinginfo.txt");
+		do
+		{
 
-   
-	}else if(check==7){
-	    ExpiryCheck();
-    }
+			fin.getline(buffer, 10, ',');
+			customer_id[i] = buffer;
+			i++;
+		} while (getline(fin, line) && i < 4);
+		i = 0;
+		while (i < 4) {
+			customerid = customer_id[i];
+			input_bill(finn, customerid);
+			i++;
+		}
+		showreport();
+
+
+	}
+	else if (check == 7) {
+		system("cls");
+		cout << "\n\n\t\t\t\t\t\tCNIC Expiry Information";
+		ExpiryCheck();
+	}
 }
 
 void customerpressed(string username) {
@@ -1026,7 +1028,7 @@ bool employee(string username, string password)
 			}
 		}
 	}
-	
+
 
 	return check2;
 
